@@ -21,6 +21,6 @@ Root.displayName = 'Root';
 Root.propTypes = {
   history: PropTypes.object.isRequired,
   store: PropTypes.object.isRequired
-}
+};
 
 export default Root;
