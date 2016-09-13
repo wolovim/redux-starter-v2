@@ -9,16 +9,31 @@
 
 .App-header {
   background-color: #222;
-  height: 150px;
   padding: 20px;
   color: white;
 }
 
-.App-intro {
+.App-body {
   font-size: large;
+  margin-top: 25px;
 }
 
 @keyframes App-logo-spin {
   from { transform: rotate(0deg); }
   to { transform: rotate(360deg); }
+}
+
+.navigation {
+  padding-bottom: 15px;
+}
+
+a.list-item {
+  color: white;
+  font-size: 16px;
+  font-weight: bold;
+  padding: 10px;
+}
+
+.no-decoration {
+  list-style: none;
 }
