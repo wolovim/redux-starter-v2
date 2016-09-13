@@ -3,6 +3,7 @@ import { connect } from 'react-redux';
 import ListItemForm from '../components/ListItemForm';
 import { addItem } from '../actions/index';
 
+
 class ListPage extends Component {
   handleAddItem(item) {
     this.props.dispatch(addItem(item));

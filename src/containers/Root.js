@@ -3,6 +3,7 @@ import { Provider } from 'react-redux';
 import { Router } from 'react-router';
 import routes from '../routes';
 
+
 class Root extends Component {
   render() {
     const { store, history } = this.props;
