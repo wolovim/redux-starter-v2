@@ -11,7 +11,7 @@ class App extends Component {
       <div className="App">
         <div className="App-header">
           <img src={logo} className="App-logo" alt="logo" />
-          <h2>Welcome to Redux Starter v2!</h2>
+          <h2>Redux Starter v2!</h2>
           <div className="navigation">
             <Link to={'/list'} className="list-item">List Maker</Link>
             <Link to={'/about'} className="list-item">About</Link>
