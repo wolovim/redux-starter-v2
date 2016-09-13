@@ -19,13 +19,13 @@ const About = () => {
         create-react-app</a></code> is the foundation.</b>
       </p>
 
-      <p><b>Additional Features in this starter app:</b></p>
+      <p><b>Additional features in this starter app:</b></p>
       <div className="app-features-wrapper">
         <ul className="app-features">
           <li>Redux</li>
           <li>An example Redux workflow</li>
-          <li>Routing (react-router / react-router-redux)</li>
-          <li>Testing (mocha / expect / enzyme)</li>
+          <li>Routing (react-router, react-router-redux)</li>
+          <li>Testing (mocha, expect, enzyme)</li>
           <li>Redux DevTools</li>
         </ul>
       </div>
