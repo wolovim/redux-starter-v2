@@ -31,6 +31,11 @@ const About = () => {
       </div>
 
       <p>
+        <b>Note:</b> In development, show/hide the Redux DevTools with <code>Ctrl + h</code>.<br />
+        When visible, you can move its location with <code>Ctrl + w</code>.
+      </p>
+
+      <p>
         People you can blame for things you don't like:{' '}
         <a href='https://twitter.com/omgwtfmarc'>@omgwtfmarc</a>.
       </p>
