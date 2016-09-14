@@ -1,4 +1,3 @@
-import expect from 'expect';
 import * as actions from '../../src/actions/';
 import * as types from '../../src/actions/ActionTypes';
 

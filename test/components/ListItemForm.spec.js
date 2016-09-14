@@ -1,10 +1,10 @@
 import React from 'react';
 import { mount } from 'enzyme';
 import ListItemForm from '../../src/components/ListItemForm';
-import expect, { createSpy } from 'expect';
+
 
 describe('ListItemForm component', () => {
-  const spy = createSpy();
+  const spy = jest.fn();
   const wrapper = mount(
     <ListItemForm handleAddItem={spy} />
   );
