@@ -25,7 +25,7 @@ const About = () => {
           <li>Redux</li>
           <li>An example Redux workflow</li>
           <li>Routing (react-router, react-router-redux)</li>
-          <li>Testing (mocha, expect, enzyme)</li>
+          <li>Testing (jest, enzyme)</li>
           <li>Redux DevTools</li>
         </ul>
       </div>
