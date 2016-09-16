@@ -1,0 +1,13 @@
+.flash-wrapper {
+  margin: 25px;
+  position: absolute;
+  right: 0;
+  top: 0;
+}
+
+.flash-message {
+  background: red;
+  color: white;
+  margin-bottom: 15px;
+  padding: 25px;
+}
