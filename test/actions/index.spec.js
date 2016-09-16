@@ -9,6 +9,19 @@ describe('actions', () => {
       type: types.ADD_ITEM,
       item
     };
-    expect(actions.addItem(item)).toEqual(expectedAction);
+
+    expect(actions.addItemSuccess(item)).toEqual(expectedAction);
   });
+
+  it('should create an action to add a flash message', () => {
+    const text = 'A thing was successful!';
+    const messageType = 'notification';
+    const expectedAction = {
+      type: types.ADD_FLASH_MESSAGE,
+      messageType,
+      text
+    };
+
+    expect(actions.addFlashMessage(text, messageType)).toEqual(expectedAction);
+  })
 });

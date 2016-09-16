@@ -10,7 +10,8 @@ export default function flashMessages(state = initialState, action) {
     case ADD_FLASH_MESSAGE:
       return {
         list: state.list.concat({
-          text: action.message,
+          text: action.text,
+          messageType: action.messageType,
           timestamp: Date.now()
         })
       };

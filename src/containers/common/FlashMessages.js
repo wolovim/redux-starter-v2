@@ -12,7 +12,12 @@ class FlashMessages extends Component {
 
   render() {
     const flashMessages = this.props.flashMessages.map((message, index) => {
-      return <FlashMessage key={index} message={message.text} dismiss={() => this.dismissFlash(message.timestamp)} />;
+      return (
+        <FlashMessage
+          key={index}
+          message={message}
+          dismiss={() => this.dismissFlash(message.timestamp)} />
+      );
     });
 
     return (

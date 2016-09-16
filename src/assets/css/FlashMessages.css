@@ -3,11 +3,19 @@
   position: absolute;
   right: 0;
   top: 0;
+  z-index: 9;
 }
 
 .flash-message {
-  background: red;
   color: white;
   margin-bottom: 15px;
   padding: 25px;
+}
+
+.flash-message.error {
+  background: red;
+}
+
+.flash-message.notification {
+  background: green;
 }
