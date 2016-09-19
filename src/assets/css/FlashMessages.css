@@ -6,6 +6,24 @@
   z-index: 9;
 }
 
+.flashes-enter {
+  opacity: 0.01;
+}
+
+.flashes-enter.flashes-enter-active {
+  opacity: 1;
+  transition: opacity 500ms ease-in;
+}
+
+.flashes-leave {
+  opacity: 1;
+}
+
+.flashes-leave.flashes-leave-active {
+  opacity: 0.01;
+  transition: opacity 300ms ease-in;
+}
+
 .flash-message {
   color: white;
   margin-bottom: 15px;

@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
+import ReactCSSTransitionGroup from 'react-addons-css-transition-group';
 import FlashMessage from './FlashMessage';
 import { dismissFlashMessage } from '../../actions/';
 
@@ -24,7 +25,12 @@ class FlashMessages extends Component {
 
     return (
       <div className="flash-wrapper">
-        {flashMessages}
+        <ReactCSSTransitionGroup
+          transitionName="flashes"
+          transitionEnterTimeout={800}
+          transitionLeaveTimeout={800}>
+          {flashMessages}
+        </ReactCSSTransitionGroup>
       </div>
     );
   }
