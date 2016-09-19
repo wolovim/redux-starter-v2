@@ -3,19 +3,44 @@ import classNames from 'classnames';
 
 
 class FlashMessage extends Component {
+  constructor(props) {
+    super(props);
+
+    this.state = {
+      isVisible: true
+    }
+  }
+
+  componentWillMount() {
+    this.autoDismiss();
+  }
+
+  componentWillUpdate(nextProps, nextState) {
+    if (!nextState.isVisible) { return null; }
+  }
+
+  autoDismiss() {
+    const { dismiss, dismissDelay } = this.props;
+    setTimeout(() => { dismiss(); }, dismissDelay);
+  }
+
+  manualDismiss() {
+    this.setState({ isVisible: false });
+  }
+
   render() {
-    const { dismiss, message, timestamp } = this.props;
-    console.log('type!', message.messageType);
+    const { message } = this.props;
     const flashMessageClasses = classNames(
       'flash-message',
       {
         'error': message.messageType === 'error',
-        'notification': message.messageType === 'notification'
+        'notification': message.messageType === 'notification',
+        'hide': !this.state.isVisible
       }
     )
 
     return (
-      <div className={flashMessageClasses} onClick={() => dismiss(timestamp)}>
+      <div className={flashMessageClasses} onClick={() => this.manualDismiss()}>
         {message.text}
       </div>
     );

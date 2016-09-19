@@ -34,6 +34,10 @@ a.list-item {
   padding: 10px;
 }
 
+.hide {
+  display: none;
+}
+
 .no-decoration {
   list-style: none;
 }

@@ -23,4 +23,40 @@ describe('flashMessages reducer', () => {
     expect(nextState.flashMessages.list[0].messageType).toEqual('error');
     expect(nextState.flashMessages.list[0].timestamp.toString()).toMatch(/^\d+$/);
   });
+
+  it('should handle DELETE_FLASH_MESSAGE', () => {
+    const initialState = {
+      flashMessages: {
+        list: [
+          {
+            text: 'Boom!',
+            messageType: 'error',
+            timestamp: 1234
+          },
+          {
+            text: 'Boom #2!',
+            messageType: 'error',
+            timestamp: 4567
+          }
+        ]
+      }
+    };
+    const action = {
+      type: types.DELETE_FLASH_MESSAGE,
+      timestamp: 1234
+    };
+    const nextState = reducer(initialState, action);
+
+    expect(nextState.flashMessages).toEqual(
+      {
+        list: [
+          {
+            text: 'Boom #2!',
+            messageType: 'error',
+            timestamp: 4567
+          }
+        ]
+      }
+    );
+  });
 });

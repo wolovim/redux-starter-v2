@@ -1,13 +1,14 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
 import FlashMessage from './FlashMessage';
+import { dismissFlashMessage } from '../../actions/';
 
 import '../../assets/css/FlashMessages.css';
 
 
 class FlashMessages extends Component {
-  dismissFlash(timestamp) {
-    console.log('dismissing timestamp:', timestamp);
+  dismissFlash(stamp) {
+    this.props.dispatch(dismissFlashMessage(stamp));
   }
 
   render() {
@@ -16,7 +17,8 @@ class FlashMessages extends Component {
         <FlashMessage
           key={index}
           message={message}
-          dismiss={() => this.dismissFlash(message.timestamp)} />
+          dismiss={() => { this.dismissFlash(message.timestamp); }}
+          dismissDelay={3000} />
       );
     });
 

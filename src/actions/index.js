@@ -15,3 +15,17 @@ export function addItemSuccess(item) {
 export function addFlashMessage(text, messageType = 'error') {
   return { type: types.ADD_FLASH_MESSAGE, text, messageType };
 }
+
+export function dismissFlashMessage(stamp) {
+  return dispatch => {
+    // NOTE: Without this timeout, a bug occurs that causes one
+    // or more closely-timed flash messages to get skipped over.
+    setTimeout(() => {
+      dispatch(deleteFlashMessage(stamp));
+    }, 500);
+  }
+}
+
+export function deleteFlashMessage(timestamp) {
+  return { type: types.DELETE_FLASH_MESSAGE, timestamp };
+}
