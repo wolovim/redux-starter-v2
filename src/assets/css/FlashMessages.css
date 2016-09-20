@@ -1,6 +1,6 @@
 .flash-wrapper {
   margin: 25px;
-  position: absolute;
+  position: fixed;
   right: 0;
   top: 0;
   z-index: 9;
@@ -31,9 +31,9 @@
 }
 
 .flash-message.error {
-  background: red;
+  background: #C33917;
 }
 
 .flash-message.notification {
-  background: green;
+  background: #44c767;
 }

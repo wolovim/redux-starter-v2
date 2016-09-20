@@ -1,5 +1,7 @@
 import React, { Component, PropTypes } from 'react';
 
+import '../assets/css/ListItemForm.css';
+
 
 class ListItemForm extends Component {
   constructor(props) {
@@ -18,12 +20,14 @@ class ListItemForm extends Component {
 
   render() {
     return (
-      <div>
+      <div className="list-form">
         <input
+          className="list-form__input"
           type="text"
+          placeholder="Add item name..."
           value={this.state.formValue}
           onChange={e => this.setState({ formValue: e.target.value })} />
-        <button onClick={e => this.handleSubmit(e)}>Add Item</button>
+        <a className="list-form__submit" onClick={e => this.handleSubmit(e)}>Add Item</a>
       </div>
     );
   }

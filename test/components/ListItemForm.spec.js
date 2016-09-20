@@ -14,7 +14,7 @@ describe('ListItemForm component', () => {
   });
 
   it('should have one button', () => {
-    expect(wrapper.find('button').length).toEqual(1);
+    expect(wrapper.find('.list-form__submit').length).toEqual(1);
   });
 
   it('should start with blank formValue state', () => {
@@ -23,7 +23,7 @@ describe('ListItemForm component', () => {
 
   it('should clear the formValue on click', () => {
     wrapper.setState({ formValue: 'item Z' });
-    wrapper.find('button').simulate('click');
+    wrapper.find('.list-form__submit').simulate('click');
     expect(spy).toHaveBeenCalled();
     expect(wrapper.state('formValue')).toEqual('');
   });

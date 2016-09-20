@@ -3,6 +3,8 @@ import { connect } from 'react-redux';
 import ListItemForm from '../components/ListItemForm';
 import { addItem, addFlashMessage } from '../actions/index';
 
+import '../assets/css/ListPage.css';
+
 
 class ListPage extends Component {
   handleAddItem(item) {
@@ -21,9 +23,27 @@ class ListPage extends Component {
 
     return (
       <div>
+        <h4>This is a quick demonstration of Redux workflows.</h4>
+        <p>
+          Basic list-making and flash message features have been implemented.<br />
+          If you're just getting started with Redux, try this{' '}
+          <a href="//quickleft.com/blog/redux-plain-english-workflow/">blog post</a>.
+        </p>
+
+        <div className="generate-error">
+          <a
+            className="generate-error-btn"
+            onClick={e => this.generateError(e)}>
+            Generate Error
+          </a>
+        </div>
+
         <ListItemForm handleAddItem={(item) => this.handleAddItem(item)} />
-        <ul className="no-decoration">{items}</ul>
-        <button onClick={e => this.generateError(e)}>Generate Error</button>
+        <div className="list-items-wrapper">
+          <ul className="list-items">
+            {items}
+          </ul>
+        </div>
       </div>
     );
   }
