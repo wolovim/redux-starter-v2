@@ -8,7 +8,7 @@ class FlashMessage extends Component {
 
     this.state = {
       isVisible: true
-    }
+    };
   }
 
   componentWillMount() {
@@ -37,7 +37,7 @@ class FlashMessage extends Component {
         'notification': message.messageType === 'notification',
         'hide': !this.state.isVisible
       }
-    )
+    );
 
     return (
       <div className={flashMessageClasses} onClick={() => this.manualDismiss()}>
@@ -53,4 +53,4 @@ FlashMessage.propTypes = {
   message: PropTypes.object.isRequired
 };
 
-export default FlashMessage
+export default FlashMessage;

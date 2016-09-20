@@ -137,6 +137,7 @@ module.exports = {
     radix: 'warn',
     'require-yield': 'warn',
     'rest-spread-spacing': ['warn', 'never'],
+    'semi': 'warn',
     strict: ['warn', 'never'],
     'unicode-bom': ['warn', 'never'],
     'use-isnan': 'warn',

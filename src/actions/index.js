@@ -5,7 +5,7 @@ export function addItem(item) {
   return dispatch => {
     dispatch(addFlashMessage(`Successfully added ${item}!`, 'notification'));
     dispatch(addItemSuccess(item));
-  }
+  };
 }
 
 export function addItemSuccess(item) {
@@ -23,7 +23,7 @@ export function dismissFlashMessage(stamp) {
     setTimeout(() => {
       dispatch(deleteFlashMessage(stamp));
     }, 500);
-  }
+  };
 }
 
 export function deleteFlashMessage(timestamp) {
