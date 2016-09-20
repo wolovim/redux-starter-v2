@@ -1,4 +1,4 @@
-import React, { Component } from 'react';
+import React, { Component, PropTypes } from 'react';
 import classNames from 'classnames';
 
 
@@ -46,5 +46,11 @@ class FlashMessage extends Component {
     );
   }
 }
+
+FlashMessage.propTypes = {
+  dismiss: PropTypes.func.isRequired,
+  dismissDelay: PropTypes.number.isRequired,
+  message: PropTypes.object.isRequired
+};
 
 export default FlashMessage

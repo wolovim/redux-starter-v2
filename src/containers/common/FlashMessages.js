@@ -1,4 +1,4 @@
-import React, { Component } from 'react';
+import React, { Component, PropTypes } from 'react';
 import { connect } from 'react-redux';
 import ReactCSSTransitionGroup from 'react-addons-css-transition-group';
 import FlashMessage from './FlashMessage';
@@ -37,8 +37,9 @@ class FlashMessages extends Component {
 }
 
 FlashMessages.propTypes = {
-
-}
+  dispatch: PropTypes.func.isRequired,
+  flashMessages: PropTypes.array.isRequired
+};
 
 function mapStateToProps(state) {
   return {
