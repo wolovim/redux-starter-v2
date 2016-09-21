@@ -72,9 +72,7 @@
   "scripts": {
     "start": "node scripts/start.js",
     "build": "node scripts/build.js",
-    "test": "jest --watch --env=jsdom",
-    "test-karma": "karma start --single-run",
-    "test-karma:watch": "karma start"
+    "test": "jest --watch --env=jsdom"
   },
   "eslintConfig": {
     "extends": "./config/eslint.js"
