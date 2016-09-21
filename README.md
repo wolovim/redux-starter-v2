@@ -4,6 +4,10 @@ This is an overhaul of [redux-starter](https://github.com/marcgarreau/redux-star
 It too is a starter app to get you a running start with React, Redux, routing, testing, flash messages,
 Redux DevTools and more.
 
+An example deployment lives on heroku lives [here](https://redux-starter-v2.herokuapp.com). For notes on how
+to deploy to heroku, see this [post](https://blog.heroku.com/deploying-react-with-zero-configuration).
+Note that this application may be statically deployed to something like S3 instead.
+
 ### Why not just update v1?
 
 The most significant change is the use of `create-react-app` as the foundation of this application.
