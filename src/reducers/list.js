@@ -1,4 +1,4 @@
-import { ADD_ITEM } from '../actions/ActionTypes';
+import { ITEM__CREATE } from '../actions/ActionTypes';
 
 
 const initialState = {
@@ -7,7 +7,7 @@ const initialState = {
 
 export default function list(state = initialState, action) {
   switch (action.type) {
-    case ADD_ITEM:
+    case ITEM__CREATE:
       return { items: state.items.concat(action.item) };
     default:
       return state;

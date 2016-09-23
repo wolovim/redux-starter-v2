@@ -14,7 +14,7 @@ describe('list reducer', () => {
     );
   });
 
-  it('should handle ADD_ITEM', () => {
+  it('should handle ITEM__CREATE', () => {
     const initialState = {
       list: {
         items: [
@@ -24,7 +24,7 @@ describe('list reducer', () => {
       }
     };
     const action = {
-      type: types.ADD_ITEM,
+      type: types.ITEM__CREATE,
       item: 'example three'
     };
     const nextState = reducer(initialState, action);

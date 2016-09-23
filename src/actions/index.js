@@ -9,11 +9,11 @@ export function addItem(item) {
 }
 
 export function addItemSuccess(item) {
-  return { type: types.ADD_ITEM, item };
+  return { type: types.ITEM__CREATE, item };
 }
 
 export function addFlashMessage(text, messageType = 'error') {
-  return { type: types.ADD_FLASH_MESSAGE, text, messageType };
+  return { type: types.FLASH_MESSAGE__CREATE, text, messageType };
 }
 
 export function dismissFlashMessage(stamp) {
@@ -27,5 +27,5 @@ export function dismissFlashMessage(stamp) {
 }
 
 export function deleteFlashMessage(timestamp) {
-  return { type: types.DELETE_FLASH_MESSAGE, timestamp };
+  return { type: types.FLASH_MESSAGE__DELETE, timestamp };
 }

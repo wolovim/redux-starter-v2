@@ -10,10 +10,10 @@ describe('flashMessages reducer', () => {
     expect(nextState.flashMessages).toEqual({ list: [] });
   });
 
-  it('should handle ADD_FLASH_MESSAGE', () => {
+  it('should handle FLASH_MESSAGE__CREATE', () => {
     const initialState = undefined;
     const action = {
-      type: types.ADD_FLASH_MESSAGE,
+      type: types.FLASH_MESSAGE__CREATE,
       text: 'Boom!',
       messageType: 'error'
     };
@@ -24,7 +24,7 @@ describe('flashMessages reducer', () => {
     expect(nextState.flashMessages.list[0].timestamp.toString()).toMatch(/^\d+$/);
   });
 
-  it('should handle DELETE_FLASH_MESSAGE', () => {
+  it('should handle FLASH_MESSAGE__DELETE', () => {
     const initialState = {
       flashMessages: {
         list: [
@@ -42,7 +42,7 @@ describe('flashMessages reducer', () => {
       }
     };
     const action = {
-      type: types.DELETE_FLASH_MESSAGE,
+      type: types.FLASH_MESSAGE__DELETE,
       timestamp: 1234
     };
     const nextState = reducer(initialState, action);

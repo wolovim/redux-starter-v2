@@ -6,7 +6,7 @@ describe('actions', () => {
   it('should create an action to add an item', () => {
     const item = 'example two';
     const expectedAction = {
-      type: types.ADD_ITEM,
+      type: types.ITEM__CREATE,
       item
     };
 
@@ -17,11 +17,21 @@ describe('actions', () => {
     const text = 'A thing was successful!';
     const messageType = 'notification';
     const expectedAction = {
-      type: types.ADD_FLASH_MESSAGE,
+      type: types.FLASH_MESSAGE__CREATE,
       messageType,
       text
     };
 
     expect(actions.addFlashMessage(text, messageType)).toEqual(expectedAction);
-  })
+  });
+
+  it('should create an action to delete a flash message', () => {
+    const timestamp = 12345;
+    const expectedAction = {
+      type: types.FLASH_MESSAGE__DELETE,
+      timestamp
+    };
+
+    expect(actions.deleteFlashMessage(timestamp)).toEqual(expectedAction);
+  });
 });

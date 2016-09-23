@@ -1,7 +1,7 @@
 import { filter } from 'lodash';
 import {
-  ADD_FLASH_MESSAGE,
-  DELETE_FLASH_MESSAGE
+  FLASH_MESSAGE__CREATE,
+  FLASH_MESSAGE__DELETE
 } from '../actions/ActionTypes';
 
 
@@ -11,7 +11,7 @@ const initialState = {
 
 export default function flashMessages(state = initialState, action) {
   switch (action.type) {
-    case ADD_FLASH_MESSAGE:
+    case FLASH_MESSAGE__CREATE:
       return {
         list: state.list.concat({
           text: action.text,
@@ -19,7 +19,7 @@ export default function flashMessages(state = initialState, action) {
           timestamp: Date.now()
         })
       };
-    case DELETE_FLASH_MESSAGE:
+    case FLASH_MESSAGE__DELETE:
       return {
         list: filter(state.list, message => {
           return message.timestamp !== action.timestamp;
