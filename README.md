@@ -5,8 +5,9 @@ It too is a starter app to get you a running start with React, Redux, routing, t
 Redux DevTools and more.
 
 This application can be deployed statically to AWS S3 (and optionally CloudFront). For a walkthrough of
-how to make that happen, see this [blog post](http://medium.com). An example S3 deployment lives
-[here](http://redux-starter-v2.s3-website-us-west-2.amazonaws.com/).
+how to make that happen, see this 
+[blog post](https://medium.com/@omgwtfmarc/deploying-create-react-app-to-s3-or-cloudfront-48dae4ce0af#.p7qp87d4y). 
+An example S3 deployment lives [here](http://redux-starter-v2.s3-website-us-west-2.amazonaws.com/).
 
 Another example deployment on heroku lives [here](https://redux-starter-v2.herokuapp.com). For notes on how
 to deploy to heroku, see this [post](https://blog.heroku.com/deploying-react-with-zero-configuration).
