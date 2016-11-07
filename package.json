@@ -74,7 +74,9 @@
   "scripts": {
     "start": "node scripts/start.js",
     "build": "node scripts/build.js",
-    "test": "jest --watch --env=jsdom"
+    "test": "jest --watch --env=jsdom",
+    "test:once": "jest --env=jsdom",
+    "deploy": "npm run test:once && npm run build && aws s3 sync build/ s3://redux-starter-v2"
   },
   "eslintConfig": {
     "extends": "./config/eslint.js"
