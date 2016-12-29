@@ -21,6 +21,5 @@ export default function validate(values) {
   if (!values.password) {
     errors.password = 'Required';
   }
-  console.log(errors);
   return errors;
 }
