@@ -4,10 +4,8 @@ import {
 } from 'actions/ActionTypes.js';
 
 function onSuccess(response, dispatch) {
-  console.log(response);
   sessionStorage.setItem('jwt', response.data.auth_token);
   dispatch({ type: LOGIN_SUCCESS });
-  console.log(sessionStorage);
 }
 
 function onError(error, dispatch) {
@@ -15,7 +13,7 @@ function onError(error, dispatch) {
 }
 
 export default function loginUser(data) {
-  const request = axios.post(`${process.env.API_HOST}/auth/login`, {
+  const request = axios.post(`/auth/login`, {
     user: data,
   });
 

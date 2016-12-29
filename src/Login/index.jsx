@@ -1,5 +1,4 @@
 import React, { PropTypes } from 'react';
-import { bindActionCreators } from 'redux';
 import { connect } from 'react-redux';
 import { Field, reduxForm } from 'redux-form';
 import validate from 'common/Forms/utils/validations.jsx';

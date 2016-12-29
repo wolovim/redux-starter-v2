@@ -13,8 +13,7 @@ function onError(error, dispatch) {
 }
 
 export default function loginUser(data) {
-  console.log(axios.defaults);
-  const request = axios.get(`${process.env.API_HOST}/api/v1/services`);
+  const request = axios.get(`/api/v1/services`);
 
   return (dispatch) => request
     .then(response => onSuccess(response, dispatch), error => onError(error, dispatch));

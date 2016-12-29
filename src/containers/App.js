@@ -1,12 +1,18 @@
 import React, { Component, PropTypes } from 'react';
-import { Link } from 'react-router';
+import { browserHistory, Link } from 'react-router';
 import FlashMessages from './common/FlashMessages';
 import logo from '../logo.svg';
-
+import { isLoggedIn } from 'Login/utils/session';
 import '../assets/css/App.css';
 
 
 class App extends Component {
+  componentWillMount() {
+    if (!isLoggedIn()) {
+      browserHistory.push('/login');
+    }
+  }
+
   render() {
     return (
       <div className="App">
@@ -17,6 +23,7 @@ class App extends Component {
           <div className="navigation">
             <Link to={'/list'} className="list-item">List Maker</Link>
             <Link to={'/about'} className="list-item">About</Link>
+            <Link to={'/login'} className="list-item">Login</Link>
           </div>
         </div>
         <div className="App-body">
