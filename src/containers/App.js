@@ -1,14 +1,21 @@
 import React, { Component, PropTypes } from 'react';
+import { connect } from 'react-redux';
 import { browserHistory, Link } from 'react-router';
 import FlashMessages from './common/FlashMessages';
 import logo from '../logo.svg';
-import { isLoggedIn } from 'Login/utils/session';
+import { isLoggedIn } from 'Login/utils/session.js';
 import '../assets/css/App.css';
 
 
 class App extends Component {
   componentWillMount() {
     if (!isLoggedIn()) {
+      browserHistory.push('/login');
+    }
+  }
+
+  componentWillReceiveProps(nextProps) {
+    if (!isLoggedIn() && nextProps.routing.pathname !== '/login') {
       browserHistory.push('/login');
     }
   }
@@ -35,7 +42,15 @@ class App extends Component {
 }
 
 App.propTypes = {
-  children: PropTypes.object
+  children: PropTypes.object,
+  routing: PropTypes.object.isRequired,
 };
 
-export default App;
+function mapStateToProps(state, ownProps) {;
+  return {
+    routing2: ownProps.location.pathname,
+    routing: state.routing.locationBeforeTransitions,
+  };
+}
+
+export default connect(mapStateToProps, null)(App);

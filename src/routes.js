@@ -5,6 +5,7 @@ import About from './components/About';
 import ListPage from './containers/ListPage';
 import LoginPage from './Login/index';
 import { setAxiosHeaders } from './Login/utils/session.js';
+import { isLoggedIn } from 'Login/utils/session.js';
 
 export default function configAuthenticatedRoutes() {
   const enforceSessionandHeaders = (nextState, replace, callback) => {
