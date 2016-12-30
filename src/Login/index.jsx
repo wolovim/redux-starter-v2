@@ -1,4 +1,5 @@
 import React, { PropTypes } from 'react';
+import { browserHistory } from 'react-router';
 import { connect } from 'react-redux';
 import { Field, reduxForm } from 'redux-form';
 import validate from 'common/Forms/utils/validations.jsx';
@@ -28,7 +29,10 @@ class LoginPage extends React.Component {
   }
 
   onSubmit(formInputs) {
-    this.props.loginUser(formInputs);
+    this.props.loginUser(formInputs)
+      .then(() => {
+        browserHistory.push('/about');
+      });
   }
 
   render() {
