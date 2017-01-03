@@ -4,6 +4,9 @@ node_modules
 # testing
 coverage
 
+# env variables
+src/env.config.js
+
 # production
 build
 
