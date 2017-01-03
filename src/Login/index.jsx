@@ -1,7 +1,7 @@
 import React, { PropTypes } from 'react';
 import { browserHistory } from 'react-router';
 import { connect } from 'react-redux';
-import { Field, reduxForm } from 'redux-form';
+import { Field, reduxForm } from 'redux-form/immutable';
 import validate from 'common/Forms/utils/validations.jsx';
 import loginUser from 'Login/actions/loginUser.jsx';
 import fetchServices from 'Login/actions/fetchServices.jsx';

@@ -68,10 +68,10 @@ App.propTypes = {
   logoutUser: PropTypes.func.isRequired,
 };
 
-function mapStateToProps(state, ownProps) {;
+function mapStateToProps(state, ownProps) {
   return {
-    loggedIn: state.loginReducer.session,
-    routing: state.routing.locationBeforeTransitions,
+    loggedIn: state.getIn(['loginReducer', 'session']),
+    routing: state.getIn(['routing', 'locationBeforeTransitions'])
   };
 }
 

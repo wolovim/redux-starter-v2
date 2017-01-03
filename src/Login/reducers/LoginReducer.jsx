@@ -4,6 +4,7 @@ import {
   LOG_OUT,
   FETCH_SERVICES,
 } from 'actions/ActionTypes.js';
+import { Map, List } from 'immutable';
 
 function setAxiosHeader(jwtToken) {
   const token = (jwtToken || '');
@@ -11,19 +12,20 @@ function setAxiosHeader(jwtToken) {
   axios.defaults.headers.common.Authorization = `Bearer ${token}`;
 }
 
-export const defaultState = {
+export const defaultState = Map({
   session: !!sessionStorage.jwt,
-};
+  services: List([]),
+});
 
 export default function sessionReducer(state = defaultState, action) {
   switch(action.type) {
     case LOGIN_SUCCESS:
       setAxiosHeader(sessionStorage.jwt);
-      return { ...state, session: !!sessionStorage.jwt };
+      return state.set('session', !!sessionStorage.jwt);
     case LOG_OUT:
-      return { ...state, session: !!sessionStorage.jwt };
+      return state.set('session', !!sessionStorage.jwt);
     case FETCH_SERVICES:
-      return { ...state, services: action.payload.data };
+      return state.set('services', action.payload.data);
     default:
       return state;
   }
