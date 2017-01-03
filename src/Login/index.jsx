@@ -39,8 +39,8 @@ class LoginPage extends React.Component {
     const { handleSubmit, pristine, reset, submitting } = this.props;
 
     return (
-      <div>
-        <form onSubmit={handleSubmit(this.onSubmit)}>
+      <div className="login">
+        <form className="login__form" onSubmit={handleSubmit(this.onSubmit)}>
           <Field name="email" type="email" component={renderField} label="Email"/>
           <Field name="password" type="password" component={renderField} label="password"/>
           <div>
