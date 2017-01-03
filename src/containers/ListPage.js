@@ -55,7 +55,7 @@ ListPage.propTypes = {
 };
 
 function mapStateToProps(state) {
-  return { items: state.list.items };
+  return { items: state.get('list').items };
 }
 
 export default connect(mapStateToProps)(ListPage);
