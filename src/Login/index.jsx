@@ -1,4 +1,4 @@
-import React, { PropTypes } from 'react';
+import React, { PropTypes, Component } from 'react';
 import { browserHistory } from 'react-router';
 import { connect } from 'react-redux';
 import { Field, reduxForm } from 'redux-form/immutable';
@@ -16,7 +16,14 @@ const renderField = ({ input, label, type, meta: { touched, error } }) => (
   </div>
 );
 
-class LoginPage extends React.Component {
+renderField.propTypes = {
+  input: PropTypes.object.isRequired,
+  label: PropTypes.string.isRequired,
+  type: PropTypes.string.isRequired,
+  meta: PropTypes.object.isRequired,
+};
+
+class LoginPage extends Component {
   constructor(props) {
     super(props);
 
@@ -50,9 +57,18 @@ class LoginPage extends React.Component {
         </form>
         <button type="button" onClick={this.fetchServices}>Fetch Services</button>
       </div>
-    )
+    );
   }
 }
+
+LoginPage.propTypes = {
+  fetchServices: PropTypes.func.isRequired,
+  loginUser: PropTypes.func.isRequired,
+  handleSubmit: PropTypes.func.isRequired,
+  pristine: PropTypes.bool.isRequired,
+  reset: PropTypes.func.isRequired,
+  submitting: PropTypes.bool.isRequired,
+};
 
 const LoginPageForm = reduxForm({
   form: 'LoginPage',

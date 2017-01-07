@@ -5,7 +5,8 @@ import { mount } from 'enzyme';
 import TestUtils from 'react-addons-test-utils';
 import ReactDOM from 'react-dom';
 import { Provider } from 'react-redux';
-import { createStore } from 'redux';
+import { createStore, compose, applyMiddleware } from 'redux';
+import thunk from 'redux-thunk';
 import Immutable from 'immutable';
 import reducers from 'reducers/index.js';
 
@@ -41,8 +42,19 @@ export function mockStorage() {
  * @return {jQuery DOM} - creates Component via HTML
  */
 export function renderComponent(ComponentClass, props = {}, state = initialState) {
+  let enhancer;
+  enhancer = compose(
+    applyMiddleware(thunk),
+  );
+
+  const store = createStore(
+    reducers,
+    initialState,
+    enhancer,
+  );
+
   const componentInstance = mount(
-    <Provider store={createStore(reducers, state)}>
+    <Provider store={store}>
       <ComponentClass { ...props } />
     </Provider>
   );

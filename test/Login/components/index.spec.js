@@ -18,15 +18,15 @@ describe('LoginPage', () => {
       expect(component.find('input').length).toBe(2);
     });
 
-    // it('calls loginUser', () => {
-    //   const form = component.find('form');
-    //   const email = component.find('input').first();
-    //   const password = component.find('input').last();
-    //
-    //   email.simulate('change', { target: { value: 'f@f.com' }});
-    //   password.simulate('change', { target: { value: 'password' }});
-    //   form.simulate('submit');
-    //   // console.log(spy.mockReturnValueOnce());
-    //   // expect(spy.calledOnce).to.equal(true);
-    // });
+    it('calls loginUser', () => {
+      const form = component.find('form');
+      const email = component.find('input').first();
+      const password = component.find('input').last();
+
+      email.simulate('change', { target: { value: 'f@f.com' }});
+      password.simulate('change', { target: { value: 'password' }});
+      form.simulate('submit');
+      console.log(spy.mock);
+      expect(spy.calledOnce).to.equal(true);
+    });
 });
