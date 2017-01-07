@@ -1,6 +1,6 @@
 import React, { Component, PropTypes } from 'react';
 
-import '../assets/css/ListItemForm.css';
+import 'assets/css/ListItemForm.css';
 
 
 class ListItemForm extends Component {

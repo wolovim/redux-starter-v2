@@ -1,13 +1,46 @@
 import React, { Component, PropTypes } from 'react';
-import { Link } from 'react-router';
+import { connect } from 'react-redux';
+import { browserHistory, Link } from 'react-router';
 import FlashMessages from './common/FlashMessages';
 import logo from '../logo.svg';
+import logoutUser from 'Login/actions/logoutUser.jsx';
 
 import '../assets/css/App.css';
 
-
 class App extends Component {
+  constructor(props) {
+    super(props);
+
+    this.logOut = this.logOut.bind(this);
+  }
+
+  componentWillMount() {
+    if (!this.props.loggedIn) {
+      browserHistory.push('/login');
+    }
+  }
+
+  componentWillReceiveProps(nextProps) {
+    if (!nextProps.loggedIn && nextProps.routing.pathname !== '/login') {
+      browserHistory.push('/login');
+    }
+  }
+
+  logOut() {
+    this.props.logoutUser();
+    browserHistory.push('/');
+  }
+
   render() {
+    const { loggedIn } = this.props;
+
+    const LoginInfo = () => {
+      if (loggedIn) {
+        return <Link className="list-item" onClick={this.logOut}>Logout</Link>;
+      }
+      return <Link to={'/login'} className="list-item">Login</Link>;
+    };
+
     return (
       <div className="App">
         <FlashMessages />
@@ -17,6 +50,7 @@ class App extends Component {
           <div className="navigation">
             <Link to={'/list'} className="list-item">List Maker</Link>
             <Link to={'/about'} className="list-item">About</Link>
+            <LoginInfo />
           </div>
         </div>
         <div className="App-body">
@@ -28,7 +62,19 @@ class App extends Component {
 }
 
 App.propTypes = {
-  children: PropTypes.object
+  loggedIn: PropTypes.bool.isRequired,
+  children: PropTypes.object,
+  routing: PropTypes.object.isRequired,
+  logoutUser: PropTypes.func.isRequired,
 };
 
-export default App;
+function mapStateToProps(state, ownProps) {
+  return {
+    loggedIn: state.getIn(['loginReducer', 'session']),
+    routing: state.getIn(['routing', 'locationBeforeTransitions'])
+  };
+}
+
+export default connect(mapStateToProps, {
+  logoutUser,
+})(App);

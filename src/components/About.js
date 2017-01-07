@@ -1,6 +1,6 @@
 import React from 'react';
 
-import '../assets/css/About.css';
+import 'assets/css/index.scss';
 
 
 const About = () => {

@@ -2,7 +2,7 @@ import reducer from '../../src/reducers';
 import * as types from '../../src/actions/ActionTypes';
 
 describe('list reducer', () => {
-  it('should return the initial state', () => {
+  xit('should return the initial state', () => {
     const initialState = undefined;
     const action = {};
     const nextState = reducer(initialState, action);
@@ -14,7 +14,7 @@ describe('list reducer', () => {
     );
   });
 
-  it('should handle ITEM__CREATE', () => {
+  xit('should handle ITEM__CREATE', () => {
     const initialState = {
       list: {
         items: [
