@@ -1,5 +1,7 @@
 # redux-starter-v2
 
+_NOTE: Looking for a newer, unejected version? Try [accelerator](https://github.com/marcgarreau/accelerator)._
+
 This is an overhaul of [redux-starter](https://github.com/marcgarreau/redux-starter).
 It too is a starter app to get you a running start with React, Redux, routing, testing, flash messages,
 Redux DevTools and more.
